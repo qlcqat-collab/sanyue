@@ -1,0 +1,5 @@
+{
+  "name": "Smart Data Dashboard",
+  "description": "An AI-powered data analysis platform for non-experts. Features data upload, smart overview, automated visualization, and insight generation.",
+  "requestFramePermissions": []
+}
