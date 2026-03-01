@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: write  # 赋予写入分支的权限，解决git报错
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          # 去掉 cache 配置，避免锁文件找不到的问题
 
       - name: Install dependencies
         run: npm install
@@ -31,6 +31,6 @@ jobs:
       - name: Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: ./smart-data-dashboard/dist  # 构建产物路径
-          branch: gh-pages  # 自动创建gh-pages分支
-          clean: true  # 清理旧的部署文件
+          folder: ./smart-data-dashboard/dist
+          branch: gh-pages
+          clean: true
